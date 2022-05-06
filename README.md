@@ -23,10 +23,10 @@ a Nuxt 3 starter template or boilerplate with a lot of useful features. and inte
 <table align="center">
   <tr>
     <td align="center" width="75%">
-      <img src="https://github.com/viandwi24/nuxt3-awesome-starter/blob/main/assets/images/preview.gif?raw=true" alt="Preview" title="Preview">
+      <img src="https://github.com/nhatpham0709/nuxt-3-template/blob/main/assets/images/preview.gif?raw=true" alt="Preview" title="Preview">
     </td>
     <td align="center" width="25%">
-      <img src="https://github.com/viandwi24/nuxt3-awesome-starter/blob/main/assets/images/preview_mobile.gif?raw=true" alt="Preview" title="Preview">
+      <img src="https://github.com/nhatpham0709/nuxt-3-template/blob/main/assets/images/preview_mobile.gif?raw=true" alt="Preview" title="Preview">
     </td>
   </tr>
 </table>
@@ -82,7 +82,7 @@ a Nuxt 3 starter template or boilerplate with a lot of useful features. and inte
 
 ## Quick Start
 * This project using `yarn` as package manager.
-* Clone this project to your computer `git clone https://github.com/viandwi24/nuxt3-awesome-starter`
+* Clone this project to your computer `git clone https://github.com/nhatpham0709/nuxt-3-template`
 * Install dependencies `yarn install`
 * Run `yarn dev` to start development server and open `http://localhost:3000` in your browser
 * Run `yarn build` to build project and `yarn start` to start production server

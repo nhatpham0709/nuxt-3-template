@@ -34,7 +34,7 @@
           text="Github"
           type="secondary"
           class="font-extrabold"
-          href="https://github.com/viandwi24/nuxt3-awesome-starter"
+          href="https://github.com/nhatpham0709/nuxt-3-template"
         />
       </div>
     </div>

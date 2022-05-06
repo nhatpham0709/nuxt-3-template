@@ -14,9 +14,9 @@
         />
         <Button
           size="xs"
-          text="Alfian Dwi Nugraha (@viandwi24)"
+          text="Phạm Đức Nhật (@nhatpham0709)"
           class="font-extrabold mt-4"
-          href="https://github.com/viandwi24"
+          href="https://github.com/nhatpham0709"
         />
       </div>
     </PageBody>

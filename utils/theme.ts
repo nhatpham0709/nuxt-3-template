@@ -1,4 +1,4 @@
-export type IThemeSettingOptions = 'dark' | 'light' | 'system' | 'realtime'
+export type IThemeSettingOptions = 'dark' | 'light' | 'system'
 
 export type ITheme = 'dark' | 'light'
 
@@ -9,7 +9,6 @@ export const availableThemes: {
   { key: 'light', text: 'Light' },
   { key: 'dark', text: 'Dark' },
   { key: 'system', text: 'System' },
-  { key: 'realtime', text: 'Realtime' },
 ]
 
 export function ThemeManager() {
@@ -30,13 +29,6 @@ export function ThemeManager() {
       return 'dark'
     }
   }
-  const getRealtimeTheme = (): ITheme => {
-    const now = new Date()
-    const hour = now.getHours()
-    const isNight = hour >= 17 || hour <= 5
-    return isNight ? 'dark' : 'light'
-  }
-
   // state
   const themeSetting = useState<IThemeSettingOptions>('theme.setting', () =>
     getUserSetting()
@@ -45,12 +37,10 @@ export function ThemeManager() {
     process.client ? getSystemTheme() : 'light'
   )
 
-  // wathcers
+  // watchers
   const onThemeSettingChange = (themeSetting: IThemeSettingOptions) => {
     themeUserSetting.value = themeSetting
-    if (themeSetting === 'realtime') {
-      themeCurrent.value = getRealtimeTheme()
-    } else if (themeSetting === 'system') {
+    if (themeSetting === 'system') {
       themeCurrent.value = getSystemTheme()
     } else {
       themeCurrent.value = themeSetting
@@ -62,12 +52,6 @@ export function ThemeManager() {
       themeCurrent.value = getSystemTheme()
     }
   }
-  const onRealtimeCheck = () => {
-    if (themeSetting.value === 'realtime') {
-      themeCurrent.value = getRealtimeTheme()
-    }
-  }
-
   // init theme
   const init = () => {
     themeSetting.value = getUserSetting()
@@ -75,27 +59,22 @@ export function ThemeManager() {
   onThemeSettingChange(themeSetting.value)
 
   // lifecycle
-  let intervalCheckTime: NodeJS.Timer
   onBeforeMount(() => init())
   onMounted(() => {
     window
       .matchMedia('(prefers-color-scheme: dark)')
       .addEventListener('change', onThemeSystemChange)
-    intervalCheckTime = setInterval(onRealtimeCheck, 1000)
   })
   onBeforeUnmount(() => {
     window
       .matchMedia('(prefers-color-scheme: dark)')
       .removeEventListener('change', onThemeSystemChange)
-    if (intervalCheckTime) clearInterval(intervalCheckTime)
   })
 
   return {
     themeSetting,
     themeCurrent,
-
     getUserSetting,
     getSystemTheme,
-    getRealtimeTheme,
   }
 }

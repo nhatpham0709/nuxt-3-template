@@ -10,7 +10,7 @@
         <Anchor
           class="underline font-bold"
           :text="$t('others.learn_more')"
-          href="https://github.com/viandwi24/nuxt3-awesome-starter"
+          href="https://github.com/nhatpham0709/nuxt-3-template"
         />
       </div>
     </template>
@@ -47,7 +47,7 @@
           <ThemeToggle />
           <Anchor
             class="hover:no-underline hover:text-slate-900 hover:dark:text-white text-lg flex self-center items-center"
-            href="https://github.com/viandwi24/nuxt3-awesome-starter"
+            href="https://github.com/nhatpham0709/nuxt-3-template"
             title="Github"
           >
             <IconMdi:github-face />
@@ -104,7 +104,7 @@
         <Button
           type="secondary"
           title="Github"
-          href="https://github.com/viandwi24/nuxt3-awesome-starter"
+          href="https://github.com/nhatpham0709/nuxt-3-template"
         >
           <IconMdi:github-face />
           <span class="ml-1">Github</span>
